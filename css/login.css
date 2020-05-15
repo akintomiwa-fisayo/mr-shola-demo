@@ -1,0 +1,72 @@
+#loginForm {
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#loginForm .form-content {
+  width: 35%;
+  padding: 2em 3em;
+}
+#loginForm .form-content h3 {
+  margin-top: 0;
+  font-weight: bold;
+}
+#loginForm .form-content .head-info {
+  margin: 0.6em 0 0;
+  text-align: center;
+}
+#loginForm .form-content .main-form {
+  width: 100%;
+  padding: 0;
+  margin-top: 0em;
+}
+#loginForm .form-content .main-form .form-element {
+  width: 100%;
+  margin-bottom: 1.2em;
+}
+#loginForm .form-content #agreement {
+  display: flex;
+  align-items: center;
+}
+#loginForm .form-content #agreement p {
+  margin: 0;
+  margin-left: 1em;
+}
+#loginForm .form-content #actions {
+  margin-top: 2em;
+  display: flex;
+}
+#loginForm .form-content #actions button {
+  min-width: 8em;
+  padding: 0.7em;
+}
+#loginForm .form-content #actions button:nth-child(1) {
+  margin-right: 1em;
+}
+@media only screen and (max-width: 1260px) {
+  #loginForm .form-content {
+    width: 43%;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  #loginForm .form-content {
+    width: 52%;
+  }
+}
+@media only screen and (max-width: 896px) {
+  #loginForm .form-content {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #loginForm .form-content {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #loginForm {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

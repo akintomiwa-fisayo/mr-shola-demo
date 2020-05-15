@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>App title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="css/demo.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/registeration.css">
+  
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="./images/logo.png">
+      <h3>NAME</h3>
+    </div>
+
+    <div class="nav-links">
+      <a href="login" class="nav-link">
+        <span class="icon fas fa-fingerprint"></span>
+        <span class="label">LOGIN</span>
+      </a>
+
+      <a href="index" class="nav-link active">
+        <span class="icon fas fa-user-plus"></span>
+        <span class="label">REGISTER</span>
+      </a>
+  </header>
+
+  <main class="">
+    <div id="registerForm">
+      <div class="form-content">
+        <h4>Connect Using</h4>
+
+        <div class="social">
+          <button class="btn btn-round btn-twitter">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button class="btn btn-round btn-dribbble">
+            <i class="fab fa-dribbble"></i>
+          </button>
+          <button class="btn btn-round btn-facebook">
+            <i class="fab fa-facebook-f"> </i>
+          </button>
+        </div>
+
+        <p class="light">or</p>
+
+        <div class="head-info">
+          <h3>DG-12 Registration</h3>
+
+          <div id="refererInfo" class="bg-info ">
+            You are being refered by shola-10
+          </div>
+
+        </div>
+
+        <div class="main-form">
+          
+          <div class="row">
+            <i class="form-element note">PS : Mandatory fields are laced with <b>red</b></i>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="icon-user"></span>
+              </div>
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>first name</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="icon-user"></span>
+              </div>
+
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>last name</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="icon-phone-wave"></span>
+              </div>
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>mobile number <span class="error"></span></span>
+                </p>
+                <input type="number" name="mobile-number" class="hero-input-field" />
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-whatsapp"></span>
+              </div>
+
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>whatsapp number <span class="error"></span></span>
+                </p>
+                <input type="number"name="whatsapp-number" class="hero-input-field" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="icon-at-sign"></span>
+              </div>
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>email <span class="error"></span></span>
+                </p>
+                <input type="text" name="email" class="hero-input-field" />
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+
+              <div class="hero-input not-empty mandatory">
+                <p class="hero-input-label">
+                  <span>date of birth</span>
+                </p>
+                <input type="date" class="hero-input-field" />
+                <!-- <div id="datepicker" class="input-group-addon input-group date" data-date-format="mm-dd-yyyy">
+                  <input class="form-control " type="text" readonly />
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fas fa-transgender"></span>
+              </div>
+              <div class="hero-input not-empty mandatory">
+                <p class="hero-input-label">
+                  <span>gender</span>
+                </p>
+                <!-- <input type="text" class="hero-input-field" /> -->
+                <select class="hero-input-field">
+                  <option>male</option>
+                  <option>female</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="icon-home3"></span>
+              </div>
+
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>address</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="icon-city"></span>
+              </div>
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>city</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>state</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>country</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>postal code</span>
+                </p>
+                <input type="number" class="hero-input-field" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>occupation</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+
+              <div class="hero-input mandatory">
+                <p class="hero-input-label">
+                  <span>church (chaper)</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+              <div class="hero-input">
+                <p class="hero-input-label">
+                  <span>telegram group link</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 form-element" >
+              <div class="icon">
+                <span class="fab fa-facebook"></span>
+              </div>
+
+              <div class="hero-input">
+                <p class="hero-input-label">
+                  <span>whatsapp group link</span>
+                </p>
+                <input type="text" class="hero-input-field" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="agreement">
+          <input type="checkbox"/>
+          <p>I agree to the <a href="#">terms and conditions.</a></p>
+        </div>
+
+        <div id="actions">
+          <button class="btn btn-info">CANCEL</button>
+          <button class="btn btn-success">SUBMIT</button>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="links">
+        <span class="link">HOME</span>
+        <span class="link">COMPANY</span>
+        <span class="link">PORTFOLIO</span>
+        <span class="link">BLOG</span>
+      </div>
+  
+      <div class="copy-right">© 2020 NAME</div>
+    </footer>
+  </main>
+
+
+  <script src="./js/general.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

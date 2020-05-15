@@ -1,0 +1,345 @@
+@formElementBorderColor : #cccccc;
+@formElementBorderRadius : 5px;
+@formElementMarginBottom : 1em;
+@errorColor : #ff516c;
+@lightColor: #d8d8d8;
+
+#heroInputConstructor(){
+	display: flex;
+	/*align-items: center;*/
+	position: relative;	
+	cursor: text;
+	padding: 0px;
+	overflow: hidden;
+  background: none;
+  border-bottom: solid 1px @lightColor;
+	margin-bottom: @formElementMarginBottom;
+	// box-shadow: inset 0 0px 8px 0 rgba(0,0,0,.06);
+	color: inherit;
+
+	@hero-input-label_fontSize : 0.75; /*<== in percentage*/
+	@heroInputPaddingTop : .5em;
+	@heroLabelPaddingTop : .35em;
+	@heroLabelPaddingBottom : @heroLabelPaddingTop;
+	
+
+	.hero-input-label,.hero-input-field{
+		padding: 0px 1em;
+
+	}
+
+	.hero-input-label{
+		position: absolute;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		margin: 0px 0px;
+		color: @lightColor;
+		top: auto;
+		font-weight: 600;
+		text-transform: capitalize;
+		font-size: 1em;
+		height: 100%;
+		z-index: 0;
+		background: none;
+		transition: height .3s ease-out, padding .3s ease-out;
+		overflow: hidden;
+		cursor: inherit;
+
+		>:nth-child(1){
+			width: 100%;
+			white-space: nowrap; 
+			word-break: normal;
+			word-wrap: normal;
+			text-overflow: ellipsis;
+			font-size: 1em;
+			transition: font-size .3s ease-out;
+			// filter: brightness(2.8);
+			overflow: hidden;
+			cursor: inherit;
+
+      .error{
+        color: @errorColor;
+        // opacity: .8;
+        // font-size: 90%;
+        font-style: italic;
+      }
+
+		}
+		
+		&::first-letter{
+			text-transform: capitalize !important;
+		}
+	}
+
+	.hero-input-field{
+		position: relative;
+		display: block;
+		width: 100%;
+		z-index: 1;
+		padding-top: ~"calc(1.2em + " @heroInputPaddingTop ~" + 0.2em)";
+		padding-bottom: @heroInputPaddingTop;
+		background: transparent;
+		border: 0;
+		border-bottom-color: transparent;
+		outline: 0;
+		appearance: none;
+		cursor: inherit;	
+
+		
+		div{
+			min-height: 1.45em;
+			width: 100%;
+		}
+
+		&:not([data-multiline=true]){
+			div{
+				white-space: nowrap;
+				overflow: hidden;
+				// text-overflow: ellipsis
+			}
+		}
+
+		&[readonly]{
+			caret-color: transparent;
+		}
+
+	}
+
+	#notEmpty(){
+		.hero-input-label{
+			padding-top: @heroInputPaddingTop;
+      z-index: 1;
+      color: inherit;
+			height: ~"calc( calc( calc(1em * " @hero-input-label_fontSize ~") * 1.2 ) + " @heroLabelPaddingBottom + @heroInputPaddingTop ~" ) !important";
+			
+			>:nth-child(1){
+				font-size: @hero-input-label_fontSize * 1em !important;
+			}
+		}
+
+	}
+
+	&.focused{
+		border-color: inherit!important;
+
+		#notEmpty();
+
+	}
+
+	&.filled{
+		#notEmpty();
+	}
+
+	&.not-empty{
+    #notEmpty();
+    .hero-input-label{
+      color: @lightColor !important;
+    }
+    
+    &.focused, &.filled{
+      .hero-input-label{
+        color: inherit !important;
+      }
+
+    }
+	}
+
+	&.mandatory{
+		// border-bottom-color: @formElementBorderColor;
+    border-bottom: solid 1px @errorColor;
+
+		.hero-input-field{
+		}
+	}
+}
+
+.hero-input{
+	#heroInputConstructor();
+}
+
+body{
+  background: #7f7f7f;
+  color: #444;
+  font-size: 16px;
+  
+  @media only screen and (max-width:  1260px) {
+    font-size: 14px;
+  }
+}
+
+.ms-container{
+  padding-left: 12vw;
+  padding-right: $padding-left;
+  
+  @media only screen and (max-width:  1260px) {
+    padding-left: 8vw;
+    padding-right: $padding-left;
+  }
+}
+
+header{
+  .ms-container;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #2196f3;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding-top: .8em;
+  padding-bottom: $padding-top; 
+
+  .logo{
+    display: flex;
+    margin: 0;
+    align-items: center;
+
+    img{
+      width: 2em;
+      margin-right: 1em;
+    }
+    
+    h3{
+      margin: 0;
+      
+    }
+  }
+
+  .nav-links{
+    display: flex;
+
+    .nav-link{
+      border-radius: 5px;
+      padding: .5em .8em;  
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      
+      .icon{
+        margin-right: .3em;
+      }
+      
+      &.active{
+        background: rgba(253, 253, 253, 0.24);
+
+      }
+    }
+  }
+}
+
+main{
+  .ms-container;
+}
+
+.light{
+  color: @lightColor;
+}
+
+.form-content{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+  box-shadow: 0px 0px 2em #727272;
+  border-radius: .6em;
+
+  .social{
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1em;
+    margin: 1em 0 1.5em;
+    
+    .btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 99999999px;
+      font-size: 1.7em;
+      width: 2em;
+      height: $width;
+      color: white;
+      
+      &.btn-twitter{
+        background: #55acef;
+      }
+
+      &.btn-dribbble {
+        background: #f4538f;
+      }
+
+      &.btn-facebook {
+        background: #395b99;
+      }
+    }
+  }
+
+  .form-element{
+    // background: blue;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5em;
+    
+    .icon{
+      display: none;
+      font-size: 2em;
+      margin-right: .5rem;
+      line-height: 1;
+      
+      span{
+        // font-weight: 500;
+
+      }
+    }
+
+    .hero-input{
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .row{
+    margin: 0;
+  }
+
+}
+
+footer{
+  .ms-container;
+  display: flex;
+  position: sticky;
+  // bottom: 0;
+  justify-content: space-between;
+  padding-top: 2em;
+  padding-bottom: $padding-top;
+  color: white;
+  font-weight: 600;
+
+  .links{
+    display: flex;
+    .link{
+      margin-right: 2em;
+    }
+
+  }
+
+  @media only screen and (max-width:  767px) {
+    display: block;
+    padding-left: 0;
+    padding-right: $padding-left;
+    
+    .links{
+      display: block;
+      
+      .link{
+        padding: .5em 0;
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .copy-right{
+      text-align: center;
+    }
+  }
+}

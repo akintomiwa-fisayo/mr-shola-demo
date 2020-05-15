@@ -1,0 +1,290 @@
+.hero-input {
+  display: flex;
+  /*align-items: center;*/
+  position: relative;
+  cursor: text;
+  padding: 0px;
+  overflow: hidden;
+  background: none;
+  border-bottom: solid 1px #d8d8d8;
+  margin-bottom: 1em;
+  color: inherit;
+  /*<== in percentage*/
+}
+.hero-input .hero-input-label,
+.hero-input .hero-input-field {
+  padding: 0px 1em;
+}
+.hero-input .hero-input-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0px 0px;
+  color: #d8d8d8;
+  top: auto;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 1em;
+  height: 100%;
+  z-index: 0;
+  background: none;
+  transition: height 0.3s ease-out, padding 0.3s ease-out;
+  overflow: hidden;
+  cursor: inherit;
+}
+.hero-input .hero-input-label > :nth-child(1) {
+  width: 100%;
+  white-space: nowrap;
+  word-break: normal;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  font-size: 1em;
+  transition: font-size 0.3s ease-out;
+  overflow: hidden;
+  cursor: inherit;
+}
+.hero-input .hero-input-label > :nth-child(1) .error {
+  color: #ff516c;
+  font-style: italic;
+}
+.hero-input .hero-input-label::first-letter {
+  text-transform: capitalize !important;
+}
+.hero-input .hero-input-field {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1;
+  padding-top: calc(1.2em +  0.5em  + 0.2em);
+  padding-bottom: 0.5em;
+  background: transparent;
+  border: 0;
+  border-bottom-color: transparent;
+  outline: 0;
+  appearance: none;
+  cursor: inherit;
+}
+.hero-input .hero-input-field div {
+  min-height: 1.45em;
+  width: 100%;
+}
+.hero-input .hero-input-field:not([data-multiline=true]) div {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.hero-input .hero-input-field[readonly] {
+  caret-color: transparent;
+}
+.hero-input.focused {
+  border-color: inherit!important;
+}
+.hero-input.focused .hero-input-label {
+  padding-top: 0.5em;
+  z-index: 1;
+  color: inherit;
+  height: calc( calc( calc(1em *  0.75 ) * 1.2 ) +  0.85em  ) !important;
+}
+.hero-input.focused .hero-input-label > :nth-child(1) {
+  font-size: 0.75em !important;
+}
+.hero-input.filled .hero-input-label {
+  padding-top: 0.5em;
+  z-index: 1;
+  color: inherit;
+  height: calc( calc( calc(1em *  0.75 ) * 1.2 ) +  0.85em  ) !important;
+}
+.hero-input.filled .hero-input-label > :nth-child(1) {
+  font-size: 0.75em !important;
+}
+.hero-input.not-empty .hero-input-label {
+  padding-top: 0.5em;
+  z-index: 1;
+  color: inherit;
+  height: calc( calc( calc(1em *  0.75 ) * 1.2 ) +  0.85em  ) !important;
+}
+.hero-input.not-empty .hero-input-label > :nth-child(1) {
+  font-size: 0.75em !important;
+}
+.hero-input.not-empty .hero-input-label {
+  color: #d8d8d8 !important;
+}
+.hero-input.not-empty.focused .hero-input-label,
+.hero-input.not-empty.filled .hero-input-label {
+  color: inherit !important;
+}
+.hero-input.mandatory {
+  border-bottom: solid 1px #ff516c;
+}
+body {
+  background: #7f7f7f;
+  color: #444;
+  font-size: 16px;
+}
+@media only screen and (max-width: 1260px) {
+  body {
+    font-size: 14px;
+  }
+}
+.ms-container {
+  padding-left: 12vw;
+  padding-right: 12vw;
+}
+@media only screen and (max-width: 1260px) {
+  .ms-container {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+header {
+  padding-left: 12vw;
+  padding-right: 12vw;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #2196f3;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+}
+@media only screen and (max-width: 1260px) {
+  header {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+header .logo {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+header .logo img {
+  width: 2em;
+  margin-right: 1em;
+}
+header .logo h3 {
+  margin: 0;
+}
+header .nav-links {
+  display: flex;
+}
+header .nav-links .nav-link {
+  border-radius: 5px;
+  padding: 0.5em 0.8em;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+header .nav-links .nav-link .icon {
+  margin-right: 0.3em;
+}
+header .nav-links .nav-link.active {
+  background: rgba(253, 253, 253, 0.24);
+}
+main {
+  padding-left: 12vw;
+  padding-right: 12vw;
+}
+@media only screen and (max-width: 1260px) {
+  main {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+.light {
+  color: #d8d8d8;
+}
+.form-content {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+  box-shadow: 0px 0px 2em #727272;
+  border-radius: 0.6em;
+}
+.form-content .social {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1em;
+  margin: 1em 0 1.5em;
+}
+.form-content .social .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 99999999px;
+  font-size: 1.7em;
+  width: 2em;
+  height: 2em;
+  color: white;
+}
+.form-content .social .btn.btn-twitter {
+  background: #55acef;
+}
+.form-content .social .btn.btn-dribbble {
+  background: #f4538f;
+}
+.form-content .social .btn.btn-facebook {
+  background: #395b99;
+}
+.form-content .form-element {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5em;
+}
+.form-content .form-element .icon {
+  display: none;
+  font-size: 2em;
+  margin-right: 0.5rem;
+  line-height: 1;
+}
+.form-content .form-element .hero-input {
+  width: 100%;
+  margin: 0;
+}
+.form-content .row {
+  margin: 0;
+}
+footer {
+  padding-left: 12vw;
+  padding-right: 12vw;
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: white;
+  font-weight: 600;
+}
+@media only screen and (max-width: 1260px) {
+  footer {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+footer .links {
+  display: flex;
+}
+footer .links .link {
+  margin-right: 2em;
+}
+@media only screen and (max-width: 767px) {
+  footer {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  footer .links {
+    display: block;
+  }
+  footer .links .link {
+    padding: 0.5em 0;
+    display: block;
+    width: 100%;
+  }
+  footer .copy-right {
+    text-align: center;
+  }
+}
